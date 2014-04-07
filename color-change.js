@@ -4,24 +4,53 @@ function getValue() {
         console.log($input.length);
         // var $count = ($input.length + 1);
         // console.log($count);
-        
+
         if($input.length ==6){
             // alert("6 has been reached");
             var char = $input.split("");
-            for (var i = 0; i<char.length; i++){
-                if(isNaN(parseInt(char[i]))){
-                    console.log("not a number");
-                    if(char[i].match(/[a-fA-F]/)){
-                        console.log("a-f");
-                    } else {
-                        alert("please enter a valid hexcolor"); 
-                    }
-                }
-            }
-            $('body').css({"background-color" : "#" + $input});
+            var isColor = isHexColor(char);
+            console.log(isColor);
+            if(isColor == false){
+                alert("not a valid hex color");
+            } else {
+                $('body').css({"background-color" : "#" + $input});
             console.log($input);
+            }
+
+            // for (var i = 0; i<char.length; i++){
+            //     if(isNaN(parseInt(char[i]))){
+            //         console.log("not a number");
+            //         if(char[i].match(/[a-fA-F]/)){
+            //             console.log("a-f");
+            //         } else {
+            //             alert("please enter a valid hexcolor"); 
+            //         }
+            //     }
+            // }
+            
         } 
     } 
+
+
+    function isHexColor(char){
+        var hexcolor = true; 
+        for (var i = 0; i<char.length; i++){
+        // if(isNaN(parseInt(char[i]))){
+        
+        //     console.log("not a number");
+            if(char[i].match(/[a-fA-F0-9]/)){
+                console.log("a-f");
+
+            } else {
+                hexcolor = false; 
+
+            }
+        }
+            
+        return hexcolor;
+
+    }
+
 // $(document).ready(function (){
 //     console.log("ready");
 //     function getValue() {
