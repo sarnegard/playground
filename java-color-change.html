@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="jquery-2.1.0.js"></script>
+    <script>
+        function getValue() {
+            var $input = $("#text-1").val();
+            if($input.length==6){
+                $('body').css({"background-color" : "#" + $input});
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Enter a 6 digit code to change the bg color! ^_^;</p>
+    <input type="text" onkeypress="getValue()" id="text-1">
+</body>
+</html>
