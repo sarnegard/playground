@@ -1,38 +1,6 @@
-    
-function getValue() {
-        var $input = $("#text-1").val();
-        console.log($input.length);
-        // var $count = ($input.length + 1);
-        // console.log($count);
+$(document).ready(function(){
 
-        if($input.length ==6){
-            // alert("6 has been reached");
-            var char = $input.split("");
-            var isColor = isHexColor(char);
-            console.log(isColor);
-            if(isColor == false){
-                alert("not a valid hex color");
-            } else {
-                $('body').css({"background-color" : "#" + $input});
-            console.log($input);
-            }
-
-            // for (var i = 0; i<char.length; i++){
-            //     if(isNaN(parseInt(char[i]))){
-            //         console.log("not a number");
-            //         if(char[i].match(/[a-fA-F]/)){
-            //             console.log("a-f");
-            //         } else {
-            //             alert("please enter a valid hexcolor"); 
-            //         }
-            //     }
-            // }
-            
-        } 
-    } 
-
-
-    function isHexColor(char){
+ function isHexColor(char){
         var hexcolor = true; 
         for (var i = 0; i<char.length; i++){
         // if(isNaN(parseInt(char[i]))){
@@ -51,23 +19,37 @@ function getValue() {
 
     }
 
-// $(document).ready(function (){
-//     console.log("ready");
-//     function getValue() {
-//         var $input = $("#text-1").val();
-//         if($input.length==6){
-//             $('body').css({"background-color" : "#" + $input});
-//         }
-//     }
+document.getElementById("text-1").onkeyup = function getValue() {
 
-//     // $("#text-1").keypress(getValue());
+        console.log("getValue was called");
+        var $input = $("#text-1").val();
+        console.log($input);
+        console.log($input.length);
+        // var $count = ($input.length + 1);
+        // console.log($count);
 
-// });
+        if($input.length ==6){
+            // alert("6 has been reached");
+            var char = $input.split("");
+            var isColor = isHexColor(char);
+            console.log(isColor);
+            if(isColor == false){
+                alert("not a valid hex color");
+            } else {
+                $('body').css({"background-color" : "#" + $input});
+            console.log($input);
+            }
 
-// var char = $input.split("");
+          
+            
+        } 
+    } 
 
-// for (var i = 0; i<char.length; i++){
-//     if(isNAN(parseInt(char[i]))){
-//         console.log("not a number");
-//     }
-// }
+
+
+
+
+   
+
+
+})
