@@ -14,7 +14,7 @@ $(document).ready(function(){
 
             }
         }
-            
+        console.log(hexcolor);
         return hexcolor;
 
     }
@@ -27,22 +27,29 @@ document.getElementById("text-1").onkeyup = function getValue() {
         console.log($input.length);
         // var $count = ($input.length + 1);
         // console.log($count);
-
-        if($input.length ==6){
+        
+        if($input.length == 6 ){
             // alert("6 has been reached");
             var char = $input.split("");
             var isColor = isHexColor(char);
             console.log(isColor);
-            if(isColor == false){
-                alert("not a valid hex color");
-            } else {
+            if((isColor == false) && !($("#error").length)){
+                $('.container').append(
+                    $('<p>')
+                    .attr('id', 'error')
+                    .text("please enter a valid hex color")
+                    );
+                // alert("not a valid hex color");
+            } else if (isColor == true){
                 $('body').css({"background-color" : "#" + $input});
             console.log($input);
             }
 
           
             
-        } 
+        } else {
+            $("#error").remove();
+        }
     } 
 
 

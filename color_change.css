@@ -1,0 +1,43 @@
+/*color change style sheet*/
+
+html{
+    height: 100%;
+}
+
+body{
+    height:100%;
+    font-size: 1.5em;
+    font-family: "Open Sans", sans-serif;
+    /*background-color: pink;*/
+}
+.container {
+    min-height: 200px;
+    background-color:white;
+    width:50%;
+    margin-top:20%;
+    margin-right: auto;
+    margin-left: auto;
+    padding:50px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #efefef;
+  
+
+    -moz-box-shadow:  0px 1px 4px 1px rgba(165, 165, 165, 0.15);
+  -webkit-box-shadow: 0px 1px 4px 1px rgba(165, 165, 165, 0.15);
+  box-shadow:         0px 1px 4px 1px rgba(165, 165, 165, 0.15);
+
+}
+
+#text-1 {
+    
+    font-size: 1em;
+}
+
+#error {
+    background-color:#F09898;
+    padding: 5px;
+    margin: 0px 100px;
+    border-radius: 5px;
+
+}
